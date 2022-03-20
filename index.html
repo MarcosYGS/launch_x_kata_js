@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex LaunchX</title>
+    <link rel="stylesheet" href="pokedex.css">
+    <link rel="shortcut icon" href="img/min.png">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#prof">profesor oak</a>
+            <a href="#pokedex">Pokedex</a>
+            <a href="#conoce">conoce +</a>
+            <a href="#pie">Contacto</a>
+        </nav>
+        <section class="textos-header">
+            <h1>Pokedex LaunchX</h1>
+            <h2>¡Atrapalos a todos!</h2>
+            <a class="flecha" href="#prof"><i class='bx bxs-down-arrow flecha'></i></a>
+       
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+ <br>
+ <br>
+
+    <section id="prof"class="contenedor sobre-nosotros">
+        <h2 class="titulo_2">¡Bienvenido al mundo de los Pokémon!</h2>
+        <div class="contenedor-sobre-nosotros">
+            <img src="img/oak.png" alt="" class="imagen-about-us">
+            <div class="contenido-textos">
+                <h3>¡Hola entrenador!</h3>
+                <p> ¡Soy Oak! Investigo a los Pokémon. ¡Ah...! Pareces ser muy responsable. ¿Querrías ayudarme? ¿Ves? Ésta es la última versión de la Pokédex. 
+                    Guarda automáticamente datos de los Pokémon que hayas visto o capturado. ¡Es una enciclopedia de alta tecnología!. 
+                    para usarla introduce el nombre o numero del pokemon para ver sus datos o usa <i class='bx bxs-up-arrow'></i><i class='bx bxs-down-arrow' ></i> para navegar por la pokedex
+                    </p>
+                    <a class="flecha" href="#pokedex"><i class='bx bxs-down-arrow flecha'></i></a>
+            </div>
+        </div>
+    </section>
+
+<section class="pokedex" id="pokedex"> 
+    <div class="pokedex_tapa"><div class="logo"></div></div>
+    <div class="bis"><div class="bis_1"></div></div>
+    
+    <div class="pokedex_cuerpo">
+        <div class="luces">
+            <div class="radio">
+                <input  type="radio" name="shiny" value="base" id="base" checked>
+                <label class="salud" for="base">Base</label>
+                <br>
+                <input  type="radio" name="shiny" value="shiny" id="shiny">
+                <label class="salud" for="shiny">Shiny</label>
+            </div>
+            
+            <input class="texto" type="text" placeholder="Nombre o num." id="pokeName" name="pokeName" onkeyup = "if(event.keyCode == 13) fetchPokemon()">
+            <button  class="botonn salud" onclick="fetchPokemon()"></button></div>
+        <div class="pantalla">
+            <div class="centro">
+
+                <div class="sec1">
+                    <div class="inf">
+                        <p class="salud2">Info. pokemon</p>
+                        <div class="cir1"></div>
+                    </div>
+                    <div class="cir"></div>
+                </div>
+
+                <div class="sec2">
+                    <p class="salud no">No: <span id="numero"></span></p>
+                    <img src="img/radar.gif" class="pokeimg"  alt="Pokemon" id="pokeImg" width="100px" height="100px">
+                    <p class="salud no">Nombre: <span id="nombre"></span></p>
+                    <p class="salud no">peso:<span id="peso"></span></p>
+                    <p class="salud no">Alt:<span id="altura"></span></p>
+                    <p class="salud no">Exp:<span id="exp"></span></p>
+                </div>
+
+                <div class="sec3">
+                    <p class="salud no">Perfil</p>
+                    <div class="tip">
+                        <div class="tituloTip"><p class="salud">tipo/</p> </div>
+                        <div class="imgtip">
+                            <img src="tipos/0.png" alt="tipo" id="pokeImg_0" width="50px">
+                            <img src="tipos/0.png" alt="tipo" id="pokeImg_1" width="50px">
+                        </div>
+                    </div>
+                    <p class="salud no">Caracteristicas.</p>
+                    <div class="atri">
+                        <div class="name_atri">
+                            <p class="salud">HP</p>
+                            <p class="salud">Atk</p>
+                            <p class="salud">Def</p>
+                        </div>
+                        <div class="est">
+                             <span class="salud1" id="stats_0">0</span><br>
+                             <span class="salud1" id="stats_1">0</span><br>
+                             <span class="salud1" id="stats_2">0</span>
+                        </div>
+
+                        <div class="name_atri2">
+                            <p class="salud">Atkesp</p>
+                            <p class="salud">Defesp</p>
+                            <p class="salud">Vel</p>
+                        </div>
+                        <div class="est2">
+                             <span class="salud1"  id="stats_3">0</span><br>
+                             <span class="salud1" id="stats_4">0</span><br>
+                             <span class="salud1" id="stats_5">0</span>
+                        </div>
+                    </div>
+                    <p class="salud no">Movimientos</p>
+                    <div class="movi">
+                        <span class="salud1 mov1" id="mov_0"></span><br>
+                        <span class="salud1 mov2" id="mov_1"></span><br>
+                        <span class="salud1 mov1" id="mov_2"></span><br>
+                        <span class="salud1 mov2" id="mov_3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="botones"><div class="fon">
+           
+            <button  class="botonn1 " onclick="pokemas()"><i class='bx bxs-up-arrow'></i></button>
+            <button  class="botonn2 " onclick="pokemenos()"><i class='bx bxs-down-arrow' ></i></button>
+        
+        </div></div>
+    </div>
+
+</section>
+
+<br>
+    <br>
+    <br>
+<section id="conoce" class="clientes contenedor">
+    <h2 class="titulo">Conoce mas</h2>
+    <br>
+    <div class="cards">
+        <div class="card">
+            <img src="img/pika.webp" alt="">
+            <div class="contenido-texto-card">
+                <h4>Pokewiki</h4>
+                <p>Pokémon Wiki es una wiki , una enciclopedia basada en la web, para la franquicia Pokémon.</p>
+                <a class="flecha" href="https://www.wikidex.net/wiki/WikiDex"target="_blank"><i class='bx bxs-down-arrow flecha'></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/Squ.png" alt="">
+            <div class="contenido-texto-card">
+                <h4>Pokeapi</h4>
+                <p>Esta es una API completa vinculada a una extensa base de datos que detalla todo sobre la serie de juegos de Pokémon.</p>
+                <a class="flecha" href="https://pokeapi.co/" target="_blank"><i class='bx bxs-down-arrow flecha'></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+
+    <footer>
+        <div name="pie" id="pie"class="partFooter">
+            <img src="img/poke.png" alt="">
+        </div>
+        
+        <div class="partFooter">
+            <h4>Redes sociales</h4>
+            <div class="so-+cial-media">
+                <a href="https://www.instagram.com/innovaccionvirtual/?hl=es-la" target="_blank"><i class='bx bxl-facebook so'></i></a>
+                <a href="https://www.instagram.com/innovaccionvirtual/?hl=es-la" target="_blank"><i class='bx bxl-instagram so' ></i></a>
+                <a href="https://github.com/MarcosYGS"><i class='bx bxl-github so'target="_blank"></i></a>
+            </div>
+        </div>
+        <audio controls  src="img/poke.mp3"></audio>
+    </footer>
+
+
+</body>
+<footer>
+    <script src="pokedex.js"></script>
+</footer>
+</html>
