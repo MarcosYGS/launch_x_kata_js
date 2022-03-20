@@ -36,9 +36,9 @@ header {
     height: 600px;
     background: #4659c7;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(233, 95%, 50%, 0.459), hsla(233, 96%, 68%, 0.459)), url("/img/main.jpg");
+    background: -webkit-linear-gradient(to right, hsla(233, 95%, 50%, 0.459), hsla(233, 96%, 68%, 0.459)), url("https://github.com/MarcosYGS/launch_x_kata_js/blob/main/img/main.jpg");
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(233, 95%, 50%, 0.459), hsla(233, 96%, 68%, 0.459)), url("/img/main.jpg");
+    background: linear-gradient(to right, hsla(233, 95%, 50%, 0.459), hsla(233, 96%, 68%, 0.459)), url("https://github.com/MarcosYGS/launch_x_kata_js/blob/main/img/main.jpg");
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
